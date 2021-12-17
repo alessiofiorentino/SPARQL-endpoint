@@ -190,11 +190,14 @@ ul {
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
-  background: white;
+  background: var(--white);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
   margin: 3rem auto;
+}
+.query-form {
+  max-width: var(--max-width);
 }
 .form-label {
   display: block;
@@ -212,11 +215,11 @@ ul {
   border: 1px solid var(--grey-200);
   box-shadow: var(--shadow-1);
 }
+.query-container {
+  height: 20rem;
+}
 .form-row {
   margin-bottom: 1rem;
-}
-.form-textarea {
-  height: 10rem;
 }
 ::placeholder {
   font-family: inherit;

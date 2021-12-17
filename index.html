@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SPARQL endpoint</title>
     <!-- css -->
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
@@ -14,15 +14,20 @@
       <h2>SPARQL endpoint</h2>
       <div class="title-underline"></div>
     </div>
-    <form class="form">
+    <form class="form query-form">
       <div class="form-row">
         <label for="textarea" class="form-label">query text</label>
-        <textarea id="textarea" class="form-textarea">
-select distinct ?Concept 
-          
-where {
-  [] a ?Concept
-}
+        <textarea id="textarea" class="form-textarea query-container">
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX ub: <http://swat.cse.lehigh.edu/onto/univ-bench.owl#> 
+SELECT ?X ?Y ?Z
+WHERE 
+{?X rdf:type ub:GraduateStudent  
+  ?Y rdf:type ub:University  
+  ?Z rdf:type ub:Department  
+  ?X ub:memberOf ?Z
+  ?Z ub:subOrganizationOf ?Y  
+  ?X ub:undergraduateDegreeFrom ?Y}
         </textarea>
         <!-- <small class="form-alert">please provide a conjunctive query</small> -->
       </div>

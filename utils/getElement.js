@@ -3,7 +3,9 @@ const get = (selection) => {
   if (element) {
     return element;
   }
-  throw new Error(`please double check ${selection} selector`);
+  throw new Error(
+    `${selection} element not found: please double check selector`
+  );
 };
 
 export default get;
